@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deixe seu Depoimento</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+</head>
+<body>
+  <main>
+    <section class="form-section">
+      <div class="container">
+        <div class="form-container">
+          <h2>Deixe seu Depoimento</h2>
+          <p class="form-desc">Compartilhe sua experiência com nossos serviços</p>
+          
+          <form id="testimonialForm">
+            <div class="form-group">
+              <label for="name">Nome Completo</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="photoType">Tipo de Foto</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" id="urlOption" name="photoType" value="url" checked>
+                  <label for="urlOption">URL da Imagem</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="uploadOption" name="photoType" value="upload">
+                  <label for="uploadOption">Upload de Imagem</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group" id="photoUrlGroup">
+              <label for="photoUrl">URL da Foto</label>
+              <input type="url" id="photoUrl" name="photoUrl" placeholder="https://exemplo.com/sua-foto.jpg">
+              <small>URL da sua foto de perfil ou avatar</small>
+            </div>
+            
+            <div class="form-group hidden" id="photoUploadGroup">
+              <label for="photoUpload">Upload da Foto</label>
+              <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+              <small>Tamanho máximo: 2MB. Formatos: JPG, PNG</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Serviço Realizado</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Selecione o serviço...</option>
+                <option value="Sessão Fotográfica">Sessão Fotográfica</option>
+                <option value="Filmagem de Evento">Filmagem de Evento</option>
+                <option value="Vídeo Institucional">Vídeo Institucional</option>
+                <option value="Edição de Vídeo">Edição de Vídeo</option>
+                <option value="Fotografia de Produto">Fotografia de Produto</option>
+                <option value="Gravação com Drone">Gravação com Drone</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="testimonial">Depoimento</label>
+              <textarea id="testimonial" name="testimonial" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
+              <a href="/html/principal.html" class="btn btn-secondary">Voltar</a>
+            </div>
+          </form>
+        </div>
+        
+        <div class="success-message hidden" id="successMessage">
+          <div class="success-content">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h3>Depoimento Enviado!</h3>
+            <p>Obrigado por compartilhar sua experiência conosco.</p>
+            <a href="/html/principal.html" class="btn btn-primary">Ver Todos os Depoimentos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/js/utils/utils-depoimento.js"></script>
+  <script src="/js/testimonials.js"></script>
+  <script src="/js/form-depoimento.js"></script>
+</body>
+</html>
