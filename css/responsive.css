@@ -273,7 +273,6 @@
   }
   
   p {
-    color: #ffffff;
     font-size: 1rem;
   }
 }
@@ -310,7 +309,7 @@
   }
 
   .carousel-controls {
-    padding: 5rem 0 0 0;
+    padding: 4rem 0 0 0;
   }
 
 }
