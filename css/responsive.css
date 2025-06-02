@@ -318,7 +318,9 @@
   padding: 0 1rem; /* espaçamento lateral para telas pequenas */
 }
 
-
+.carousel-controls{
+  padding: 50%;
+}
 
 
 
