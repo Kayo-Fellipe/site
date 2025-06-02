@@ -1,7 +1,7 @@
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #333333 inset !important; /* cor de fundo */
   box-shadow: 0 0 0 1000px #333333 inset !important;
-  -webkit-text-fill-color: #fffefecc !important; /* cor do texto */
+  -webkit-text-fill-color: #ffffff !important; /* cor do texto */
   font-size: 1.0rem !important;
   transition: background-color 9999s ease-in-out 0s !important;
 }
