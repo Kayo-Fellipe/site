@@ -312,10 +312,10 @@
 .testimonial-carousel {
   position: relative;
   margin: var(--space-4) 0;
-  max-width: 300px; /* limitar largura máxima para não esticar demais */
+  max-width: 800px; /* limitar largura máxima para não esticar demais */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem; /* espaçamento lateral para telas pequenas */
+  padding: 0 5rem; /* espaçamento lateral para telas pequenas */
 }
 
 .carousel-controls {
