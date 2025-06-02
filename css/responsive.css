@@ -318,23 +318,6 @@
   padding: 0 1rem; /* espaçamento lateral para telas pequenas */
 }
 
-/* Ajuste para tablets */
-@media (max-width: 768px) {
-  .testimonial-carousel {
-    margin: var(--space-3) 0;
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-  }
-
-  .control-btn {
-    margin: 0.25rem;
-  }
-}
 
 
 
