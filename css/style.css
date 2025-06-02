@@ -463,6 +463,12 @@ input[type="file"]::file-selector-button:hover {
   transform: scale(1.2);
 }
 
+.cta-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   /* Color System */
   --color-primary: #7017e4;
