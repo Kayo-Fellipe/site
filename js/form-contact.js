@@ -174,3 +174,39 @@ inputs.forEach(input => {
     }
   });
 });
+
+const phoneInput = document.getElementById("phone");
+
+    phoneInput.addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "");
+
+      // Limita a 11 dígitos
+      if (value.length > 11) value = value.slice(0, 11);
+
+      // Aplica a máscara dinamicamente
+      let formatted = value;
+
+      if (value.length > 6) {
+        formatted = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      } else if (value.length > 2) {
+        formatted = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      } else if (value.length > 0) {
+        formatted = `(${value}`;
+      }
+
+      phoneInput.value = formatted;
+    });
+
+    // Garante que o usuário possa apagar livremente (corrige o cursor)
+    phoneInput.addEventListener("keydown", function (e) {
+      const key = e.key;
+
+      if (key === "Backspace") {
+        const value = e.target.value;
+
+        // Se estiver apagando parênteses, tira eles também
+        if (value.endsWith(") ") || value.endsWith("(") || value.endsWith("-")) {
+          e.target.value = value.slice(0, -1);
+        }
+      }
+});
