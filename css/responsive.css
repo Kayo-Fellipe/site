@@ -307,6 +307,11 @@
     width: 20px;
     height: 20px;
   }
+
+  .carousel-controls {
+    padding: 5rem 0 0 0;
+  }
+
 }
 
 .testimonial-carousel {
@@ -318,9 +323,6 @@
   padding: 0 0rem; /* espaçamento lateral para telas pequenas */
 }
 
-.carousel-controls {
-  padding: 5rem 0 0 0;
-}
 
 
 
