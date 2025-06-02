@@ -2,8 +2,14 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #333333 inset !important; /* cor de fundo */
   box-shadow: 0 0 0 1000px #333333 inset !important;
   -webkit-text-fill-color: #ffffff !important; /* cor do texto */
-  font-size: 7rem !important;
+  font-size: 0.9rem !important;
   transition: background-color 9999s ease-in-out 0s !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 
@@ -544,6 +550,7 @@ body {
   color: var(--color-light);
   background-color: var(--color-dark);
   overflow-x: hidden;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
