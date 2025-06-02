@@ -1439,15 +1439,3 @@ img {
   background-color: var(--color-primary-dark);
 }
 
-.wrapper, main, section {
-  overflow-x: hidden;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-* {
-  outline: 1px solid red;
-}
