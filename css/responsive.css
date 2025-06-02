@@ -322,9 +322,8 @@
 @media (max-width: 768px) {
   .testimonial-carousel {
     margin: var(--space-3) 0;
-    max-width: 90%;
+    max-width: 100%;
     padding: 0 0.5rem;
-    display: flex;
   }
 
   .carousel-controls {
