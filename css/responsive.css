@@ -253,20 +253,6 @@
 }
 
 
-/* Tablets */
-@media (max-width: 768px) {
-  .testimonial-carousel {
-    margin: var(--space-3) 0;
-  }
-}
-
-/* Celulares */
-@media (max-width: 480px) {
-  .testimonial-carousel {
-    margin: var(--space-2) 0;
-  }
-}
-
 @media (min-width: 992px) {
   .carousel-container {
     min-height: 280px;
@@ -309,4 +295,77 @@
   p {
     color: #4b5563;
   }
+}
+
+
+.testimonial-carousel {
+  position: relative;
+  margin: var(--space-4) 0;
+  max-width: 800px; /* limitar largura máxima para não esticar demais */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem; /* espaçamento lateral para telas pequenas */
+}
+
+/* Ajuste para tablets */
+@media (max-width: 768px) {
+  .testimonial-carousel {
+    margin: var(--space-3) 0;
+    max-width: 90%;
+    padding: 0 0.5rem;
+  }
+
+  .carousel-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .control-btn {
+    margin: 0.25rem;
+  }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+  .testimonial-carousel {
+    margin: var(--space-2) 0;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .carousel-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-indicators {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Estilização dos controles - básico flex para alinhamento */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Botões */
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.control-btn:hover {
+  color: var(--primary-color, #007bff);
 }
