@@ -1,9 +1,11 @@
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #db1717 inset !important; /* substitua pela sua cor de fundo */
-  box-shadow: 0 0 0px 1000px #db1717 inset !important;
-  -webkit-text-fill-color: #000 !important; /* cor do texto */
-  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px #333333 inset !important; /* cor de fundo */
+  box-shadow: 0 0 0 1000px #333333 inset !important;
+  -webkit-text-fill-color: #ffffffcc !important; /* cor do texto */
+  font-size: 1.2rem !important;
+  transition: background-color 9999s ease-in-out 0s !important;
 }
+
 
 #thankyou-container {
   max-width: 1280px;
