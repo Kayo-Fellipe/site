@@ -1439,7 +1439,6 @@ img {
   background-color: var(--color-primary-dark);
 }
 
-html, body {
-  max-width: 100%;
+html {
   overflow-x: hidden;
 }
