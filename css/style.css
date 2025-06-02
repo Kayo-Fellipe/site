@@ -722,7 +722,7 @@ img {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  height: 100%;
   background-image: url('/assets/images/the-black-background.jpg');
   background-size: cover;
   background-position: center;
@@ -1437,4 +1437,17 @@ img {
 
 .scroll-top:hover {
   background-color: var(--color-primary-dark);
+}
+
+.wrapper, main, section {
+  overflow-x: hidden;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  outline: 1px solid red;
 }
