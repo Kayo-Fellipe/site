@@ -319,7 +319,7 @@
 }
 
 .carousel-controls {
-  padding: 1rem; /* espaçamento interno em todos os lados */
+  padding: 1rem 0; /* 1rem em cima e embaixo, 0 nas laterais */
 }
 
 
