@@ -463,6 +463,10 @@ input[type="file"]::file-selector-button:hover {
   transform: scale(1.2);
 }
 
+.carousel-controls {
+  padding: 4rem 0 0 0;
+}
+
 .cta-container{
   display: flex;
   flex-direction: column;
