@@ -503,20 +503,13 @@ input[type="file"]::file-selector-button:hover {
 /* Responsive adjustments */
 @media (min-width: 768px) {
   .carousel-container {
-    padding-bottom: 80px; /* Garante espaço para as setas */
-    position: relative;
+    min-height: 320px;
   }
   
   .testimonial-card {
-    margin-bottom: 40px; /* Garante que o conteúdo não colida com as setas */
-  }
-
-  .carousel-nav {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
   }
   
   .testimonial-header {
