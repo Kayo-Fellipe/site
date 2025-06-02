@@ -318,8 +318,8 @@
   padding: 0 1rem; /* espaçamento lateral para telas pequenas */
 }
 
-.carousel-controls{
-  padding: 50%;
+.carousel-controls {
+  padding: 1rem; /* espaçamento interno em todos os lados */
 }
 
 
