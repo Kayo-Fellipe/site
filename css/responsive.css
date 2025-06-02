@@ -15,10 +15,6 @@
   }
 }
 
-body {
-  overflow-x: hidden;
-}
-
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (max-width: 992px) {
   .hero-content h1 {

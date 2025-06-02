@@ -2,9 +2,10 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #333333 inset !important; /* cor de fundo */
   box-shadow: 0 0 0 1000px #333333 inset !important;
   -webkit-text-fill-color: #ffffff !important; /* cor do texto */
-  font-size: 0.9rem !important;
+  font-size: 1rem !important;
   transition: background-color 9999s ease-in-out 0s !important;
 }
+
 
 #thankyou-container {
   max-width: 1280px;
@@ -543,7 +544,6 @@ body {
   color: var(--color-light);
   background-color: var(--color-dark);
   overflow-x: hidden;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -722,7 +722,7 @@ img {
 
 /* Hero Section */
 .hero {
-  height: 100vw;
+  height: 100vh;
   background-image: url('/assets/images/the-black-background.jpg');
   background-size: cover;
   background-position: center;
