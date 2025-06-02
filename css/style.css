@@ -2,7 +2,7 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #333333 inset !important; /* cor de fundo */
   box-shadow: 0 0 0 1000px #333333 inset !important;
   -webkit-text-fill-color: #ffffff !important; /* cor do texto */
-  font-size: 1.0rem !important;
+  font-size: 1rem !important;
   transition: background-color 9999s ease-in-out 0s !important;
 }
 
@@ -110,6 +110,10 @@ label {
   display: block;
   margin-bottom: var(--space-1);
   font-weight: 500;
+}
+
+#service{
+  padding: var(--space-1) var(--space-2);
 }
 
 input[type="text"],
