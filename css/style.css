@@ -1438,3 +1438,8 @@ img {
 .scroll-top:hover {
   background-color: var(--color-primary-dark);
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
