@@ -6,13 +6,6 @@ input:-webkit-autofill {
   transition: background-color 9999s ease-in-out 0s !important;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
 #thankyou-container {
   max-width: 1280px;
   margin: 0 auto;
