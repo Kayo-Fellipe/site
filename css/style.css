@@ -154,7 +154,11 @@ select {
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
   background-size: 1rem;
-  padding-right: 5rem;
+  padding-right: 2rem;
+}
+
+#service {
+  padding: 90px;
 }
 
 .radio-group {
