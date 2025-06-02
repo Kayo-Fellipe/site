@@ -252,6 +252,21 @@
   }
 }
 
+
+/* Tablets */
+@media (max-width: 768px) {
+  .testimonial-carousel {
+    margin: var(--space-3) 0;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .testimonial-carousel {
+    margin: var(--space-2) 0;
+  }
+}
+
 @media (min-width: 992px) {
   .carousel-container {
     min-height: 280px;
