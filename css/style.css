@@ -163,17 +163,22 @@ select {
 
 .radio-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* permite quebra, se for muuuito necessário */
   gap: var(--space-4);
+  margin-top: var(--space-1);
 }
 
 .radio-option {
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  white-space: nowrap; /* evita quebra do texto */
+  white-space: nowrap; /* impede quebra do texto */
   font-size: 0.95rem;
   cursor: pointer;
+}
+
+.radio-option span {
+  white-space: nowrap;
 }
 
 input[type="radio"] {
