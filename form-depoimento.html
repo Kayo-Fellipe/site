@@ -21,17 +21,15 @@
               <input type="text" id="name" name="name" required>
             </div>
             
-           <div class="form-group">
-              <label for="photoType">Tipo de Foto</label>
-              <div class="radio-inline">
-                <label>
-                  <input type="radio" name="photoType" value="url" checked>
-                  URL da Imagem
-                </label>
-                <label>
-                  <input type="radio" name="photoType" value="upload">
-                  Upload de Imagem
-                </label>
+            <label for="photoType">Tipo de Foto</label>
+            <div class="radio-container">
+              <div>
+                <input type="radio" id="url" name="photoType" value="url" checked>
+                <label for="url">URL da Imagem</label>
+              </div>
+              <div>
+                <input type="radio" id="upload" name="photoType" value="upload">
+                <label for="upload">Upload de Imagem</label>
               </div>
             </div>
             
