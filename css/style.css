@@ -161,24 +161,20 @@ select {
   padding: 0.5rem 0.8rem;
 }
 
-.radio-group {
+.radio-inline {
   display: flex;
-  flex-wrap: wrap; /* permite quebra, se for muuuito necessário */
-  gap: var(--space-4);
-  margin-top: var(--space-1);
+  gap: 1rem; /* espaço entre as opções */
+  flex-wrap: wrap; /* se precisar quebrar em telas MUITO pequenas */
+  margin-top: 0.5rem;
 }
 
-.radio-option {
+.radio-inline label {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
-  white-space: nowrap; /* impede quebra do texto */
+  gap: 0.5rem;
+  white-space: nowrap; /* NÃO deixar quebrar o texto */
   font-size: 0.95rem;
   cursor: pointer;
-}
-
-.radio-option span {
-  white-space: nowrap;
 }
 
 input[type="radio"] {
