@@ -163,7 +163,7 @@ select {
 
 .radio-inline {
   display: flex;
-  gap: 1rem; /* espaço entre as opções */
+  gap: 1rem; /* espaço entre as opçõess */
   flex-wrap: wrap; /* se precisar quebrar em telas MUITO pequenas */
   margin-top: 0.5rem;
 }
