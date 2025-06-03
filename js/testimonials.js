@@ -1,87 +1,70 @@
-/**
- * Testimonials Management
- * Handles the storage and retrieval of testimonial data
- */
-
-// Storage key for localStorage
-const STORAGE_KEY = 'portfolio_testimonials';
+// Get Firebase database reference
+const db = firebase.database();
+const testimonialRef = db.ref('testimonials');
 
 /**
- * Get all testimonials from storage
- * @returns {Array} Array of testimonial objects
+ * Get all testimonials from Firebase
+ * @returns {Promise<Array>} Array of testimonial objects
  */
-function getTestimonials() {
-  // Try to get testimonials from localStorage
-  const storedData = localStorage.getItem(STORAGE_KEY);
-  
-  if (storedData) {
-    return JSON.parse(storedData);
+async function getTestimonials() {
+  try {
+    const snapshot = await testimonialRef.once('value');
+    const data = snapshot.val();
+    return data ? Object.values(data) : [];
+  } catch (error) {
+    console.error('Error fetching testimonials:', error);
+    return [];
   }
-  
-  // If no data exists, initialize with mock data
-  saveTestimonials(MOCK_TESTIMONIALS);
-  return MOCK_TESTIMONIALS;
-}
-
-/**
- * Save testimonials to storage
- * @param {Array} testimonials - Array of testimonial objects
- */
-function saveTestimonials(testimonials) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(testimonials));
 }
 
 /**
  * Add a new testimonial
  * @param {Object} testimonial - Testimonial object
- * @returns {Object} Added testimonial with ID
+ * @returns {Promise<Object>} Added testimonial with ID
  */
-function addTestimonial(testimonial) {
-  const testimonials = getTestimonials();
-  
-  // Generate a new ID
-  const newId = testimonials.length > 0 
-    ? Math.max(...testimonials.map(t => t.id)) + 1 
-    : 1;
-  
-  // Add testimonial with new ID
-  const newTestimonial = {
-    ...testimonial,
-    id: newId,
-    // Add timestamp for sorting (optional)
-    timestamp: new Date().toISOString()
-  };
-  
-  // Save updated testimonials
-  const updatedTestimonials = [...testimonials, newTestimonial];
-  saveTestimonials(updatedTestimonials);
-  
-  return newTestimonial;
+async function addTestimonial(testimonial) {
+  try {
+    const newTestimonialRef = testimonialRef.push();
+    const newTestimonial = {
+      ...testimonial,
+      id: newTestimonialRef.key,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
+    };
+    
+    await newTestimonialRef.set(newTestimonial);
+    return newTestimonial;
+  } catch (error) {
+    console.error('Error adding testimonial:', error);
+    throw error;
+  }
 }
 
 /**
  * Delete a testimonial by ID
- * @param {number} id - Testimonial ID
- * @returns {boolean} Success flag
+ * @param {string} id - Testimonial ID
+ * @returns {Promise<boolean>} Success flag
  */
-function deleteTestimonial(id) {
-  const testimonials = getTestimonials();
-  const filteredTestimonials = testimonials.filter(t => t.id !== id);
-  
-  if (filteredTestimonials.length < testimonials.length) {
-    saveTestimonials(filteredTestimonials);
+async function deleteTestimonial(id) {
+  try {
+    await testimonialRef.child(id).remove();
     return true;
+  } catch (error) {
+    console.error('Error deleting testimonial:', error);
+    return false;
   }
-  
-  return false; // No testimonial found with that ID
 }
 
 /**
  * Get a single testimonial by ID
- * @param {number} id - Testimonial ID
- * @returns {Object|null} Testimonial object or null if not found
+ * @param {string} id - Testimonial ID
+ * @returns {Promise<Object|null>} Testimonial object or null if not found
  */
-function getTestimonialById(id) {
-  const testimonials = getTestimonials();
-  return testimonials.find(t => t.id === id) || null;
+async function getTestimonialById(id) {
+  try {
+    const snapshot = await testimonialRef.child(id).once('value');
+    return snapshot.val();
+  } catch (error) {
+    console.error('Error fetching testimonial:', error);
+    return null;
+  }
 }
