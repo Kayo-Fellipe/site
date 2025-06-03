@@ -163,7 +163,7 @@ select {
 
 .radio-container {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   flex-wrap: nowrap; /* impede que quebrem para a linha de baixo */
   margin-bottom: 1rem;
 }
@@ -176,7 +176,7 @@ select {
 }
 
 .radio-container label {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: white;
   cursor: pointer;
 }
