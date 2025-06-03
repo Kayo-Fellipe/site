@@ -1,12 +1,12 @@
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDdhpTyXHmwR-V0l_4B5wobJS93FMwfz0U",
+  authDomain: "meu-site-depoimentos.firebaseapp.com",
+  databaseURL: "https://meu-site-depoimentos-default-rtdb.firebaseio.com",
+  projectId: "meu-site-depoimentos",
+  storageBucket: "meu-site-depoimentos.firebasestorage.app",
+  messagingSenderId: "638058613744",
+  appId: "1:638058613744:web:b4bc859a4f05bbc3dd6b35"
 };
 
 // Initialize Firebase
