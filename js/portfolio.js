@@ -5,8 +5,8 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 const portfolioLinks = document.querySelectorAll('.portfolio-link');
 const modal = document.getElementById('portfolio-modal');
-const modalContainer = document.getElementById('modal-container');
-const closeModal = document.querySelector('.close-modal');
+const modalContainer = modal ? document.getElementById('modal-container') : null;
+const closeModal = modal ? document.querySelector('.close-modal') : null;
 
 // Portfolio Filtering
 filterButtons.forEach(button => {
@@ -55,56 +55,43 @@ filterStyle.textContent = `
 `;
 document.head.appendChild(filterStyle);
 
-// Portfolio Modal
-portfolioLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    const type = link.getAttribute('data-type');
-    const src = link.getAttribute('data-src');
-    
-    // Clear previous content
-    modalContainer.innerHTML = '';
-    
-    // Add content based on type
-    if (type === 'image') {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Portfolio Image';
-      modalContainer.appendChild(img);
-    } else if (type === 'video') {
-      const iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.allow = 'autoplay; fullscreen';
-      iframe.allowFullscreen = true;
-      modalContainer.appendChild(iframe);
-    }
-    
-    // Show modal
-    modal.style.display = 'block';
-    
-    // Disable body scroll
-    document.body.style.overflow = 'hidden';
+// Only initialize modal functionality if modal elements exist
+if (modal && modalContainer && closeModal) {
+  // Portfolio Modal
+  portfolioLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const type = link.getAttribute('data-type');
+      const src = link.getAttribute('data-src');
+      
+      // Clear previous content
+      modalContainer.innerHTML = '';
+      
+      // Add content based on type
+      if (type === 'image') {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Portfolio Image';
+        modalContainer.appendChild(img);
+      } else if (type === 'video') {
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.allow = 'autoplay; fullscreen';
+        iframe.allowFullscreen = true;
+        modalContainer.appendChild(iframe);
+      }
+      
+      // Show modal
+      modal.style.display = 'block';
+      
+      // Disable body scroll
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
 
-// Close modal
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-  
-  // Re-enable body scroll
-  document.body.style.overflow = 'auto';
-  
-  // Clear iframe src to stop video if playing
-  const iframe = modalContainer.querySelector('iframe');
-  if (iframe) {
-    iframe.src = '';
-  }
-});
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
+  // Close modal
+  closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
     
     // Re-enable body scroll
@@ -115,21 +102,37 @@ window.addEventListener('click', (e) => {
     if (iframe) {
       iframe.src = '';
     }
-  }
-});
+  });
 
-// Close modal with Escape key
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.style.display === 'block') {
-    modal.style.display = 'none';
-    
-    // Re-enable body scroll
-    document.body.style.overflow = 'auto';
-    
-    // Clear iframe src to stop video if playing
-    const iframe = modalContainer.querySelector('iframe');
-    if (iframe) {
-      iframe.src = '';
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      
+      // Re-enable body scroll
+      document.body.style.overflow = 'auto';
+      
+      // Clear iframe src to stop video if playing
+      const iframe = modalContainer.querySelector('iframe');
+      if (iframe) {
+        iframe.src = '';
+      }
     }
-  }
-});
+  });
+
+  // Close modal with Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      modal.style.display = 'none';
+      
+      // Re-enable body scroll
+      document.body.style.overflow = 'auto';
+      
+      // Clear iframe src to stop video if playing
+      const iframe = modalContainer.querySelector('iframe');
+      if (iframe) {
+        iframe.src = '';
+      }
+    }
+  });
+}
