@@ -34,7 +34,7 @@ async function processImage(file) {
 }
 
 // Get default avatar URL based on name
-function getDefaultAvatarUrl(name) {
+function getDefaultAvatarUrl(name = '') {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random`;
 }
 
