@@ -25,7 +25,7 @@
     { "source": "/(.*)", "destination": "/$1.html" },
     { "source": "/(.*)", "destination": "/$1" }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "mkdir -p dist && cp -r * dist/ && rm -rf dist/dist",
   "outputDirectory": "dist",
   "framework": null
 }
